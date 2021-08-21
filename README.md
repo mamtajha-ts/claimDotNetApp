@@ -85,10 +85,10 @@ $ git --version
 ## Create a new directory for GitHub repositories.
 $ mkdir git-repos
 #
-# Change the working directory to 'git-repos'
+## Change the working directory to 'git-repos'
 $ cd git-repos
 #
-# Clone your GitHub repository into directory 'git-repos'.  Cloning this repo. will allow you to make changes to the application artifacts in the forked GitHub project.
+## Clone your GitHub repository into directory 'git-repos'.  Cloning this repo. will allow you to make changes to the application artifacts in the forked GitHub project.
 # Substitute your GitHub Account ID in the URL.
 $ git clone https://github.com/<YOUR-GITHUB-ACCOUNT>/aks-aspnet-sqldb-rest.git
 #
@@ -98,13 +98,13 @@ $ cd
 Install a command-line JSON processor. Download jq command line processor and install it on the VM. # Make sure you are in the home directory
 $ cd
 #
-# Create a directory called 'jq'
+### Create a directory called 'jq'
 $ mkdir jq
 #
-# Switch to the 'jq' directory
+### Switch to the 'jq' directory
 $ cd jq
 #
-# Download the 'jq' binary and save it in this directory
+## Download the 'jq' binary and save it in this directory
 $ wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
 #
 # Grant execute permission for jq
@@ -121,50 +121,49 @@ $ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 # Create the local azure-cli repository information.
 $ sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
 #
-# Install with the yum install command.
+## Install with the yum install command.
 $ sudo yum install -y azure-cli
 #
-# Check the Azure CLI version (At the time of the last update to this document, 2.18.0 was the latest release)
+## Check the Azure CLI version (At the time of the last update to this document, 2.18.0 was the latest release)
 $ az -v
 #
-# Login to your Azure account.  Use your Azure login ID and password to login.
+## Login to your Azure account.  Use your Azure login ID and password to login.
 $ az login -u <user name> -p <password>
 # 
-Install Kubernetes CLI and .NET Core SDK on this VM. # Switch back to home directory
+##Install Kubernetes CLI and .NET Core SDK on this VM. # Switch back to home directory
 $ cd
 #
-# Install Kubernetes CLI
+## Install Kubernetes CLI
 # Create a new directory 'aztools' under home directory to store the kubectl binary
 $ mkdir aztools
 #
-# Install Kubernetes CLI (kubectl + kubelogin) v1.20.x in the 'aztools' directory
+## Install Kubernetes CLI (kubectl + kubelogin) v1.20.x in the 'aztools' directory
 $ sudo az aks install-cli --install-location=./aztools/kubectl
-# Register the Microsoft key, product repository and required dependencies.
-# sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm - Don't run this command !!
+## Register the Microsoft key, product repository and required dependencies.
 #
 $ curl https://packages.microsoft.com/config/rhel/7/prod.repo > ./microsoft-prod.repo
 $ sudo cp ./microsoft-prod.repo /etc/yum.repos.d/
 #
-# Update the system libraries.  This command will take a few minutes (~10 mins) to complete.  Be patient!
+## Update the system libraries.  This command will take a few minutes (~10 mins) to complete.  Be patient!
 $ sudo yum update -y
 #
-# Install .NET Core 3.1 (latest) binaries
+## Install .NET Core 3.1 (latest) binaries
 $ sudo yum install -y dotnet-sdk-3.1
 #
-# Check .NET Core version (Should print 3.1.xxx)
+## Check .NET Core version (Should print 3.1.xxx)
 $ dotnet --version
 #
-# Install .NET EF Core 5.0.x
-# This command installs dotnet-ef in ~/.dotnet/tools directory. so this directory has to be in
-# the Path !!
+## Install .NET EF Core 5.0.x
+## This command installs dotnet-ef in ~/.dotnet/tools directory. so this directory has to be in
+## the Path !!
 $ dotnet tool install --global dotnet-ef
 #
-# Check .NET Core EF version (should print 5.0.2)
-# You may need to logout of the terminal session and log back in to view theoutput
+## Check .NET Core EF version (should print 5.0.2)
+## You may need to logout of the terminal session and log back in to view theoutput
 $ dotnet-ef --version
 #
-# Finally, update '.bashrc' file and set the path to jq, Helm and Kubectl binaries
-# NOTE: Substitute 'labuser' with your Linux VM login name.
+## Finally, update '.bashrc' file and set the path to jq, Helm and Kubectl binaries
+## NOTE: Substitute 'labuser' with your Linux VM login name.
 $ JQ=/home/labuser/jq
 $ KUBECLI=/home/labuser/aztools
 
