@@ -76,13 +76,13 @@ Follow the steps below to create the Bastion host (Linux VM) and install pre-req
 Install Git client and clone this repository. When cloning the repository, make sure to use your Account ID in the GitHub URL. # Switch to home directory
 $ cd
 #
-# Install Git client
+## Install Git client
 $ sudo yum install -y git
 #
-# Check Git version number
+## Check Git version number
 $ git --version
 #
-# Create a new directory for GitHub repositories.
+## Create a new directory for GitHub repositories.
 $ mkdir git-repos
 #
 # Change the working directory to 'git-repos'
