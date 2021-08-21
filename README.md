@@ -94,7 +94,7 @@ $ git clone https://github.com/<YOUR-GITHUB-ACCOUNT>/aks-aspnet-sqldb-rest.git
 #
 # Switch to home directory
 $ cd
-#  
+#
 Install a command-line JSON processor. Download jq command line processor and install it on the VM. # Make sure you are in the home directory
 $ cd
 #
@@ -197,12 +197,11 @@ Before proceeding, login into the Linux VM using SSH.
 8.	SQL_USER_ID	9.	User ID for the SQL Server instance
 10.	SQL_USER_PWD	11.	User password for the SQL Server instance
 	12.	Do not include the curly braces and the hash symbols (#{ xxx }#) when specifying the values. See the screenshot below. 
-￼
- 
+
 1. Build the Claims API microservice using the .NET Core SDK. #
 2. # Build the Claims API microservice
 3. $ dotnet build
-4. #  
+4. #
 5. Create and run the database migration scripts. This step will create the database tables for persisting Claims records in the Azure SQL Server database. Refer to the command snippet below. # Run the .NET Core CLI command to create the database migration scripts
 6. $ dotnet-ef migrations add InitialCreate
 7. #
@@ -270,18 +269,17 @@ Before proceeding, login into the Linux VM using SSH.
 68. #  - No. of runs : eg., 1, 2, 3, 4 ....
 69. #  - hostname and port : eg., localhost:5000
 70. $ ./shell-scripts/start-load.sh <No. of runs> <hostname and port> ./test-data
-71. #  In the SSH terminal window where you started the application container (docker run), press Control-C to exit out of the program and return back to the terminal prompt. 
+71. #In the SSH terminal window where you started the application container (docker run), press Control-C to exit out of the program and return back to the terminal prompt.
 You have now successfully tested the Claims API microservice locally on this VM.
 
 D. Deploy Azure Container Registry
 Approx. time to complete this section: 10 minutes
 In this step, we will deploy an instance of Azure Container Registry (ACR) to store container images which we will build in later steps. A container registry such as ACR allows us to store multiple versions of application container images in one centralized repository and consume them from multiple nodes (VMs/Servers) where our applications are deployed.
 1. Login to your Azure portal account. Then click on Container registries in the navigational panel on the left. If you don't see this option in the nav. panel then click on All services, scroll down to the COMPUTE section and click on the star beside Container registries. This will add the Container registries option to the service list in the navigational panel. Now click on the Container registries option. You will see a page as displayed below. 
-￼
-2.  
-3. Click on Add to create a new ACR instance. Give a meaningful name to your registry and make a note of it. Select an Azure Subscription, select the Resource group which you created in Section A and leave the Location field as-is. The location should default to the location assigned to the resource group. Select the Basic pricing tier (SKU). Click Create when you are done. IMPORTANT NOTES:
+
+2. Click on Add to create a new ACR instance. Give a meaningful name to your registry and make a note of it. Select an Azure Subscription, select the Resource group which you created in Section A and leave the Location field as-is. The location should default to the location assigned to the resource group. Select the Basic pricing tier (SKU). Click Create when you are done. IMPORTANT NOTES:
     * Keep in mind, you will need an Premium SKU ACR instance in order to work on Exercise 4. Hence select the Premium SKU if you intend to work on this challenge later.
-￼
+
 
 
 Create an Azure Kubernetes Service cluster and deploy Claims API microservice
